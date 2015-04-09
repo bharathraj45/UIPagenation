@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,78 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIf-AH-Qhp">
+                                <rect key="frame" x="275" y="562" width="50" height="30"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aux-fb-suE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.8346508373950372" green="1" blue="0.9932981249179067" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XIf-AH-Qhp" secondAttribute="bottom" constant="8" symbolic="YES" id="jP8-6d-6MM"/>
+                            <constraint firstAttribute="centerX" secondItem="XIf-AH-Qhp" secondAttribute="centerX" id="xR8-dr-z3n"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="dZb-6j-WQ2">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Ona-uB-vuM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CjC-2P-7zm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="863" y="319"/>
+        </scene>
+        <!--Content View Controller-->
+        <scene sceneID="anO-wS-cOW">
+            <objects>
+                <viewController storyboardIdentifier="ContentViewController" id="h5E-sM-T1R" customClass="ContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="htH-R4-EPc"/>
+                        <viewControllerLayoutGuide type="bottom" id="9my-NP-fBc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KOz-Bf-DNW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TK1-MQ-W7U">
+                                <rect key="frame" x="16" y="96" width="568" height="384"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="384" id="dMt-JX-w4I"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXI-DG-lGT">
+                                <rect key="frame" x="16" y="48" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.46531310369375156" green="0.8387069847030626" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="TK1-MQ-W7U" firstAttribute="trailing" secondItem="kXI-DG-lGT" secondAttribute="trailing" id="87b-Ur-sww"/>
+                            <constraint firstItem="TK1-MQ-W7U" firstAttribute="top" secondItem="kXI-DG-lGT" secondAttribute="bottom" constant="27" id="Ahx-dA-WvO"/>
+                            <constraint firstItem="TK1-MQ-W7U" firstAttribute="trailing" secondItem="KOz-Bf-DNW" secondAttribute="trailingMargin" id="Enq-Da-KBG"/>
+                            <constraint firstItem="TK1-MQ-W7U" firstAttribute="leading" secondItem="KOz-Bf-DNW" secondAttribute="leadingMargin" id="JvV-OM-0AK"/>
+                            <constraint firstItem="9my-NP-fBc" firstAttribute="top" secondItem="TK1-MQ-W7U" secondAttribute="bottom" constant="120" id="QpM-yR-W5z"/>
+                            <constraint firstItem="TK1-MQ-W7U" firstAttribute="leading" secondItem="kXI-DG-lGT" secondAttribute="leading" id="gLT-4f-VKR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageview" destination="TK1-MQ-W7U" id="bnW-2m-VXw"/>
+                        <outlet property="lblTitle" destination="kXI-DG-lGT" id="wy5-wc-tuj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mli-hq-rrd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="863" y="969"/>
         </scene>
     </scenes>
 </document>

@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIPageViewControllerDataSource>
 
 
+@property (nonatomic, strong) UIPageViewController *pageController;
+@property (nonatomic, strong) NSArray *pageTitles;
+@property (nonatomic, strong) NSArray *pageImages;
+
+- (IBAction)restartAction:(id)sender;
 @end
 
